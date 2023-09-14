@@ -22,7 +22,7 @@ class WeatherItem extends React.Component{
   state = {
     input: "",
     src: "",
-    time: ""
+    time: " "
   };
 
 
