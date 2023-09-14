@@ -33,7 +33,7 @@ class App extends Component {
 
         <main>
           <section className="weather-now">
-            <img src={cloudy} width={500} height={400}></img>
+            <img className="weather-now-img" src={cloudy} width={400} height={300}></img>
             <span className="weather-now-dis">overcast clouds</span>
             <div className="weather-now-bottom">
               <div className="weather-temp">

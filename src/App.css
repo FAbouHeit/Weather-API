@@ -73,7 +73,7 @@ button, button:hover{
   background-color:blue;
   border: none;   
   }
-
+  
   .weather-now{
     display: flex;
     flex-direction: column;
@@ -126,5 +126,48 @@ button, button:hover{
  .weather-now-bottom,  .weather-temp, .weather-now-dis,  .weather-hum-pre, .weather-week div, .weather-now, .weather-week{
   background-color: transparent;
  }
+@media (max-width: 500px) {
+  .app{
+    height: fit-content;
+  }
+  form{
+    width: 100%;
+  }
+  
+  input{
+    width:30%, auto;  
+  }  
+  button,input{
+    font-size: 0.9em;
+  }
+  .weather-now-bottom{
+    font-size: 0.8em;
+    margin-top: 5em;
 
+  }
+  .weather-now-img{
+    width: 300px;
+    height: 200px;
+  }
+.weather-week{
+  overflow:scroll ;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 6em;
+}
+  
+   .weather-week div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 6em;
+    align-items: center;
+    margin-top: 5em; 
+    width: 30%;
+   }
+  .weather-hum-pre{
+    margin-top: 3em;
+  }
+  
+}
  
