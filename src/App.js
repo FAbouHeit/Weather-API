@@ -20,6 +20,8 @@ import unknown from "./img/weather-icons/unknown.svg";
 
 import WeatherItem from "./components/WeatherItem";
 
+import FakeWeather from "./data/FakeWeather.json";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -33,33 +35,48 @@ class App extends Component {
   };
 
   render() {
+
+    let now_description = FakeWeather.list[0].weather[0].description;
+    // let now_description = FakeWeather.list[0].dt;
+
+    // let now_description = "hola";
+
+
     return (
       <div className="app">
 
         <header>
           <form>
-          <input type="text" placeholder="Type in a city name"></input>
-           <button>FIND WEATHER</button>
-           </form>
+            <input type="text" placeholder="Type in a city name"></input>
+            <button>FIND WEATHER</button>
+          </form>
         </header>
 
         <main>
           <section className="weather-now">
-            <WeatherNow src={snow} desc={now_description} tempFrom={num_from} tempTo={num_to} humidity={num_hum} pressure={num_pres}/>
+            <WeatherNow src={snow} desc={now_description} tempFrom={FakeWeather.list[0].main.temp_min} tempTo={FakeWeather.list[0].main.temp_max} humidity={FakeWeather.list[0].main.humidity} pressure={FakeWeather.list[0].main.pressure} />
           </section>
           <section className="weather-week">
 
-            <WeatherItem src={cloudy} time={num_time} temp={num_temp}/>
-            <WeatherItem src={cloudy} time={num_time} temp={num_temp}/>
-            <WeatherItem src={cloudy} time={num_time} temp={num_temp}/>
-            <WeatherItem src={cloudy} time={num_time} temp={num_temp}/>
-            <WeatherItem src={cloudy} time={num_time} temp={num_temp}/>
-            <WeatherItem src={cloudy} time={num_time} temp={num_temp}/>
-            <WeatherItem src={cloudy} time={num_time} temp={num_temp}/>
-            
-        </section>
+            {/* <WeatherItem src={cloudy} time={num_time} temp={num_temp} />
+            <WeatherItem src={cloudy} time={num_time} temp={num_temp} />
+            <WeatherItem src={cloudy} time={num_time} temp={num_temp} />
+            <WeatherItem src={cloudy} time={num_time} temp={num_temp} />
+            <WeatherItem src={cloudy} time={num_time} temp={num_temp} />
+            <WeatherItem src={cloudy} time={num_time} temp={num_temp} />
+            <WeatherItem src={cloudy} time={num_time} temp={num_temp} /> */}
+            {
+              FakeWeather.list.map((dt) => (
+                <>
+                for(let i=0; i;i++){}
+                  <WeatherItem src={cloudy} time={dt.dt_txt} temp={dt.main.temp} />
+                </>
+              ))
+            }
+
+          </section>
         </main>
-        
+
       </div>
     );
   }
@@ -67,8 +84,8 @@ class App extends Component {
 
 export default App;
 
-let now_description = "great";
-let num_from =0, num_to =0 , num_hum =0, num_pres = 0;
+// let now_description = "great";
+let num_from = 0, num_to = 0, num_hum = 0, num_pres = 0;
 
 let num_time = "00:00";
 let num_temp = 0;
