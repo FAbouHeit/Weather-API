@@ -5,8 +5,20 @@ import SayHi, { SayHello } from "./components/WeatherItem";
 import fakeWeatherData from "./fakeWeatherData.json";
 
 import "./App.css";
+import WeatherNow from "./components/WeatherToday";
 
-import cloudy from "./img/weather-icons/mostlycloudy.svg";
+import clear from "./img/weather-icons/clear.svg";
+import cloudy from "./img/weather-icons/cloudy.svg";
+import drizzle from "./img/weather-icons/drizzle.svg";
+import fog from "./img/weather-icons/fog.svg";
+import mostlycloudy from "./img/weather-icons/mostlycloudy.svg";
+import partlycloudy from "./img/weather-icons/partlycloudy.svg";
+import rain from "./img/weather-icons/rain.svg";
+import snow from "./img/weather-icons/snow.svg";
+import storm from "./img/weather-icons/storm.svg";
+import unknown from "./img/weather-icons/unknown.svg";
+
+import WeatherItem from "./components/WeatherItem";
 
 class App extends Component {
   constructor(props) {
@@ -33,53 +45,18 @@ class App extends Component {
 
         <main>
           <section className="weather-now">
-            <img src={cloudy} width={500} height={400}></img>
-            <span className="weather-now-dis">overcast clouds</span>
-            <div className="weather-now-bottom">
-              <div className="weather-temp">
-                <span><strong>Temperature</strong></span><span> 10&deg; to 11&deg; C</span>
-              </div>
-              <div className="weather-hum-pre">
-                <span><strong>Humidity</strong></span> <span>78%</span> <span><strong>Pressure</strong></span> <span>1008.48</span>
-              </div>
-            </div>
+
+            <WeatherNow />
           </section>
           <section className="weather-week">
-            <div>
-              <time>03:00</time>
-              <img src={cloudy} width={60} height={60}></img>
-              <span>8&deg; C</span>
-            </div>
-            <div>
-              <time>03:00</time>
-              <img src={cloudy} width={60} height={60}></img>
-              <span>8&deg; C</span>
-            </div>
-            <div>
-              <time>03:00</time>
-              <img src={cloudy} width={60} height={60}></img>
-              <span>8&deg; C</span>
-            </div>
-            <div>
-              <time>03:00</time>
-              <img src={cloudy} width={60} height={60}></img>
-              <span>8&deg; C</span>
-            </div>
-            <div>
-              <time>03:00</time>
-              <img src={cloudy} width={60} height={60}></img>
-              <span>8&deg; C</span>
-            </div>
-            <div>
-              <time>03:00</time>
-              <img src={cloudy} width={60} height={60}></img>
-              <span>8&deg; C</span>
-            </div>
-            <div>
-              <time>03:00</time>
-              <img src={cloudy} width={60} height={60}></img>
-              <span>8&deg; C</span>
-            </div>
+
+            <WeatherItem src={cloudy} timesss={"04:00"} temp={8}/>
+            <WeatherItem src={cloudy}/>
+            <WeatherItem src={rain}/>
+            <WeatherItem src={cloudy}/>
+            <WeatherItem src={cloudy}/>
+            <WeatherItem src={cloudy}/>
+            <WeatherItem src={cloudy}/>
             
         </section>
         </main>
