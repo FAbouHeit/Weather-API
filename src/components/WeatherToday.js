@@ -12,14 +12,14 @@ class WeatherNow extends React.Component {
   render() {
     return (
       <>
-        <img src={cloudy} width={500} height={400}></img>
-        <span className="weather-now-dis">overcast clouds</span>
+        <img src={this.props.src} width={500} height={400}></img>
+        <span className="weather-now-dis">{this.props.desc}</span>
         <div className="weather-now-bottom">
             <div className="weather-temp">
-                <span><strong>Temperature</strong></span><span> 10&deg; to 11&deg; C</span>
+                <span><strong>Temperature</strong></span><span> {this.props.tempFrom}&deg; to {this.props.tempTo}&deg; C</span>
             </div>
             <div className="weather-hum-pre">
-                <span><strong>Humidity</strong></span> <span>78%</span> <span><strong>Pressure</strong></span> <span>1008.48</span>
+                <span><strong>Humidity</strong></span> <span>{this.props.humidity}%</span> <span><strong>Pressure</strong></span> <span>{this.props.pressure}</span>
             </div>
         </div>
 

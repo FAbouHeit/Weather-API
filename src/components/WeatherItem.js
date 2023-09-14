@@ -31,7 +31,7 @@ class WeatherItem extends React.Component{
       <>
 
             <div>
-              <time>{this.props.timesss}</time>
+              <time>{this.props.time}</time>
               <img width={60} height={60} src={this.props.src}></img>
               <span>{this.props.temp}&deg; C</span>
             </div>

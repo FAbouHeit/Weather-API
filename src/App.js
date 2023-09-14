@@ -45,18 +45,17 @@ class App extends Component {
 
         <main>
           <section className="weather-now">
-
-            <WeatherNow />
+            <WeatherNow src={snow} desc={now_description} tempFrom={num_from} tempTo={num_to} humidity={num_hum} pressure={num_pres}/>
           </section>
           <section className="weather-week">
 
-            <WeatherItem src={cloudy} timesss={"04:00"} temp={8}/>
-            <WeatherItem src={cloudy}/>
-            <WeatherItem src={rain}/>
-            <WeatherItem src={cloudy}/>
-            <WeatherItem src={cloudy}/>
-            <WeatherItem src={cloudy}/>
-            <WeatherItem src={cloudy}/>
+            <WeatherItem src={cloudy} time={num_time} temp={num_temp}/>
+            <WeatherItem src={cloudy} time={num_time} temp={num_temp}/>
+            <WeatherItem src={cloudy} time={num_time} temp={num_temp}/>
+            <WeatherItem src={cloudy} time={num_time} temp={num_temp}/>
+            <WeatherItem src={cloudy} time={num_time} temp={num_temp}/>
+            <WeatherItem src={cloudy} time={num_time} temp={num_temp}/>
+            <WeatherItem src={cloudy} time={num_time} temp={num_temp}/>
             
         </section>
         </main>
@@ -67,6 +66,14 @@ class App extends Component {
 }
 
 export default App;
+
+let now_description = "great";
+let num_from =0, num_to =0 , num_hum =0, num_pres = 0;
+
+let num_time = "00:00";
+let num_temp = 0;
+
+
 
 
 // <Search handleInput={this.handleInputChange} />
