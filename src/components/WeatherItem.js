@@ -55,8 +55,7 @@ class WeatherItem extends React.Component{
 
 
 // let myArray = FakeWeather.list.slice(5,11);
-
-
+// let newlist = list.shift(list);
 
 
 render(){
