@@ -58,21 +58,11 @@ class App extends Component {
           </section>
           <section className="weather-week">
 
-            {/* <WeatherItem src={cloudy} time={num_time} temp={num_temp} />
-            <WeatherItem src={cloudy} time={num_time} temp={num_temp} />
-            <WeatherItem src={cloudy} time={num_time} temp={num_temp} />
-            <WeatherItem src={cloudy} time={num_time} temp={num_temp} />
-            <WeatherItem src={cloudy} time={num_time} temp={num_temp} />
-            <WeatherItem src={cloudy} time={num_time} temp={num_temp} />
-            <WeatherItem src={cloudy} time={num_time} temp={num_temp} /> */}
-            {
-              FakeWeather.list.map((dt) => (
-                <>
-                for(let i=0; i;i++){}
-                  <WeatherItem src={cloudy} time={dt.dt_txt} temp={dt.main.temp} />
-                </>
-              ))
-            }
+          
+            
+
+         
+            <WeatherItem src={cloudy}/>
 
           </section>
         </main>
@@ -89,6 +79,7 @@ let num_from = 0, num_to = 0, num_hum = 0, num_pres = 0;
 
 let num_time = "00:00";
 let num_temp = 0;
+const seven = 7;
 
 
 
