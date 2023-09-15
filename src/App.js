@@ -49,6 +49,7 @@ class App extends Component {
           <form>
             <input type="text" placeholder="Type in a city name"></input>
             <button>FIND WEATHER</button>
+            
           </form>
         </header>
 

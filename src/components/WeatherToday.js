@@ -2,6 +2,7 @@ import React from "react";
 
 // import clear from "../img/weather-icons/clear.svg";
 import cloudy from "../img/weather-icons/mostlycloudy.svg";
+import FakeWeather from "../data/FakeWeather.json";
 
 class WeatherNow extends React.Component {
   state = {
@@ -10,6 +11,8 @@ class WeatherNow extends React.Component {
 
 
   render() {
+
+    
     return (
       <>
         <img src={this.props.src} width={500} height={400}></img>

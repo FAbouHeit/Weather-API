@@ -23,47 +23,14 @@ class WeatherItem extends React.Component{
   };
 
 
-  // render() {
-
-  //   const dataPrint = ()=>{
-
-  //     let arr1 = FakeWeather.list.slice(10,11);
-  //     console.log(arr1);
-  //     FakeWeather.list.map((dt)=>{
-  //     })
-  //   }
-   
-
-    
-  //   return (
-  //     <>
-  //           <div>
-  //             <time>{this.props.time}</time>
-  //             <img width={60} height={60} src={this.props.src}></img>
-  //             <span>{this.props.temp}&deg; C</span>
-  //           </div>
-  //           {/* dataPrint(); */}
-            
-
-  //     </>
-  //   );
-  // }
-
-
-// }
-
-
-
-// let myArray = FakeWeather.list.slice(5,11);
-// let newlist = list.shift(list);
 
 
 render(){
   return(
+    
   <>
   
-                {
-                
+              {
                 FakeWeather.list.map((a)=>{
                   // let myHours = a.dt_txt.split(" ");
                   let mysrc = a.weather[0].main;
