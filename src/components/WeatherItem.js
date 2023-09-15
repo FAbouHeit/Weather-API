@@ -1,7 +1,5 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import React, { useState } from "react";
 import FakeWeather from "../data/FakeWeather.json";
-
 import clear from "../img/weather-icons/clear.svg";
 import cloudy from "../img/weather-icons/cloudy.svg";
 import drizzle from "../img/weather-icons/drizzle.svg";
@@ -13,99 +11,58 @@ import snow from "../img/weather-icons/snow.svg";
 import storm from "../img/weather-icons/storm.svg";
 import unknown from "../img/weather-icons/unknown.svg";
 
+const WeatherItem = ({forcastweather}) => {
+  console.log(forcastweather)
+  return (
+    <>
+      {forcastweather.map((a) => {
+        let mysrc = a.weather[0].main;
+        let myActualSrc = "";
 
+        switch (mysrc) {
+          case "Clear":
+            myActualSrc = clear;
+            break;
+          case "Clouds":
+            myActualSrc = cloudy;
+            break;
+          case "Drizzle":
+            myActualSrc = drizzle;
+            break;
+          case "Fog":
+            myActualSrc = fog;
+            break;
+          case "Mostly Cloudy":
+            myActualSrc = mostlycloudy;
+            break;
+          case "Partly Cloudy":
+            myActualSrc = partlycloudy;
+            break;
+          case "Rain":
+            myActualSrc = rain;
+            break;
+          case "Snow":
+            myActualSrc = snow;
+            break;
+          case "Storm":
+            myActualSrc = storm;
+            break;
+          case "Unknown":
+            myActualSrc = unknown;
+            break;
+          default:
+            myActualSrc = unknown;
+        }
+        return (
+          <div key={a.dt}>
+            <time>{a.dt_txt}</time>
+            <img width={60} height={60} src={myActualSrc} alt={mysrc} />
+            <span>{a.main.temp}&deg; C</span>
+          </div>
+        );
+      })}
+    </>
+  );
+};
 
-class WeatherItem extends React.Component{
-  state = {
-    input: "",
-    src: "",
-    time: " "
-  };
-
-
-  // render() {
-
-  //   const dataPrint = ()=>{
-
-  //     let arr1 = FakeWeather.list.slice(10,11);
-  //     console.log(arr1);
-  //     FakeWeather.list.map((dt)=>{
-  //     })
-  //   }
-   
-
-    
-  //   return (
-  //     <>
-  //           <div>
-  //             <time>{this.props.time}</time>
-  //             <img width={60} height={60} src={this.props.src}></img>
-  //             <span>{this.props.temp}&deg; C</span>
-  //           </div>
-  //           {/* dataPrint(); */}
-            
-
-  //     </>
-  //   );
-  // }
-
-
-// }
-
-
-
-// let myArray = FakeWeather.list.slice(5,11);
-// let newlist = list.shift(list);
-
-
-render(){
-  return(
-  <>
-  
-                {
-                
-                FakeWeather.list.map((a)=>{
-                  // let myHours = a.dt_txt.split(" ");
-                  let mysrc = a.weather[0].main;
-                  let myActualSrc= "";
-
-                  switch(mysrc){
-                    case "Clear": myActualSrc = clear;
-                    break;
-                    case "Clouds": myActualSrc = cloudy;
-                    break;
-                    case "Drizzle": myActualSrc = drizzle;
-                    break;
-                    case "Fog": myActualSrc = fog;
-                    break;
-                    case "Mostly Cloudy": myActualSrc = mostlycloudy;
-                    break;
-                    case "Partly Cloudy": myActualSrc = partlycloudy;
-                    break;
-                    case "Rain": myActualSrc = rain;
-                    break;
-                    case "Snow": myActualSrc = snow;
-                    break;
-                    case "Storm": myActualSrc = storm;
-                    break;
-                    case "Unknown": myActualSrc = unknown;
-                    break;
-                    default: myActualSrc = unknown;
-                  }
-                  return(
-                    <div>
-                      <div>{mysrc}</div>
-                    <time>{a.dt_txt.time}</time>
-                    <img width={60} height={60} src={myActualSrc} alt={mysrc}></img>
-                    <span>{this.props.temp}&deg; C</span>
-                    </div>
-                  )
-                })}
-  
-  </>
-)
-              }
-            
-            }
-
-export default WeatherItem
+export default WeatherItem;
