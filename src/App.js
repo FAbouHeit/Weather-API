@@ -23,10 +23,11 @@ import WeatherItem from "./components/WeatherItem";
 import FakeWeather from "./data/FakeWeather.json";
 
 const App = () => {
-  const [name, setName] = useState("Fuad");
-  
-  const handleInputChange = (value) => {
-    setName(value);
+  const [input, setInput] = useState("");
+  const [city, setCity] = useState("");
+  console.log(city)
+  const handleInputChange = (e) => {
+    setInput(e.target.value);
   };
 
   let now_description = FakeWeather.list[0].weather[0].description;
@@ -34,14 +35,12 @@ const App = () => {
   return (
     <div className="app">
       <header>
-        <form>
           <input
             type="text"forcastWeather
             placeholder="Type in a city name"
-            onChange={(e) => handleInputChange(e.target.value)}
+            onChange={(e) => handleInputChange(e)}
           />
-          <button>FIND WEATHER</button>
-        </form>
+          <button onClick={()=> setCity(input)}>FIND WEATHER</button>
       </header>
 
       <main>

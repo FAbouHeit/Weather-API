@@ -12,12 +12,13 @@ import storm from "../img/weather-icons/storm.svg";
 import unknown from "../img/weather-icons/unknown.svg";
 
 const WeatherItem = ({forcastweather}) => {
-  console.log(forcastweather)
   return (
     <>
       {forcastweather.map((a) => {
         let mysrc = a.weather[0].main;
         let myActualSrc = "";
+        let mytime = a.dt_txt.split(" ");
+        mytime = mytime[1].slice(0,5);
 
         switch (mysrc) {
           case "Clear":
@@ -55,7 +56,7 @@ const WeatherItem = ({forcastweather}) => {
         }
         return (
           <div key={a.dt}>
-            <time>{a.dt_txt}</time>
+            <time>{mytime}</time>
             <img width={60} height={60} src={myActualSrc} alt={mysrc} />
             <span>{a.main.temp}&deg; C</span>
           </div>

@@ -7,11 +7,9 @@ const Search = (props) => {
 
   const handleInputChange = (event) => {
     setInput(event.target.value);
+    props.onInputChange(event.target.value);
   };
 
-  const handleButtonClick = () => {
-    props.handleInput(input);
-  };
 
   return (
     <div>
